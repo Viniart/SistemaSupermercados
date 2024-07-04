@@ -10,7 +10,7 @@ namespace SistemaSupermercados.Service
 {
     public class ProdutoService
     {
-        List<Produto> produtos;
+        private List<Produto> produtos;
         int id = 1;
 
         public ProdutoService()
@@ -32,6 +32,35 @@ namespace SistemaSupermercados.Service
             {
                 DisplayHelper.ExibirProduto(p);
             }
+        }
+
+        public bool Atualizar(int id, Produto prod)
+        {
+            Produto produto = produtos.Find(p => p.Id == id);
+            if (produto != null)
+            {
+                produto.Nome = prod.Nome;
+                produto.Categoria = prod.Categoria;
+                produto.Preco = prod.Preco;
+                produto.QuantidadeEstoque = prod.QuantidadeEstoque;
+                produto.DataValidade = prod.DataValidade;
+
+                // Se retornar true (verdadeiro) quer dizer que ele conseguiu achar o produto e atualizar
+                return true;
+            }
+            // Se retornar false (falso) quer dizer que ele não conseguiu achar o produto
+            return false;
+        }
+
+        public bool Deletar(int id)
+        {
+            Produto produto = produtos.Find(p => p.Id == id);
+            if (produto != null)
+            {
+                produtos.Remove(produto);
+                return true;
+            }
+            return false;
         }
 
     }
