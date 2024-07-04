@@ -34,6 +34,11 @@ namespace SistemaSupermercados.Service
             }
         }
 
+        public List<Produto> RetornarLista()
+        {
+            return produtos;
+        }
+
         public bool Atualizar(int id, Produto prod)
         {
             Produto produto = produtos.Find(p => p.Id == id);

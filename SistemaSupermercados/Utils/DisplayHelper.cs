@@ -48,6 +48,7 @@ namespace SistemaSupermercados.Utils
             Console.WriteLine($"Data de Transacao: {transacao.DataTransacao}");
             Console.WriteLine($"Valor Total: {transacao.ValorTotal}\n");
 
+            Console.WriteLine("Produtos: \n");
             foreach (var item in transacao.Produtos)
             {
                 ExibirProduto(item);

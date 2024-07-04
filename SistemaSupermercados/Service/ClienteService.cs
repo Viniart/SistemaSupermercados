@@ -34,6 +34,11 @@ namespace SistemaSupermercados.Service
             }
         }
 
+        public List<Cliente> RetornarLista()
+        {
+            return clientes;
+        }
+
         public bool Atualizar(int id, Cliente cliente)
         {
             Cliente clienteLista = clientes.Find(p => p.Id == id);

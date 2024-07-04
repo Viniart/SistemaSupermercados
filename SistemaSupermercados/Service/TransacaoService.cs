@@ -28,9 +28,9 @@ namespace SistemaSupermercados.Service
 
         public void Listar()
         {
-            foreach (var f in transacoes)
+            foreach (var t in transacoes)
             {
-                DisplayHelper.ExibirFuncionario(f);
+                DisplayHelper.ExibirTransacao(t);
             }
         }
 

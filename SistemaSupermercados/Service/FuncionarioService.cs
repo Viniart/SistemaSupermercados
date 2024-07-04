@@ -34,6 +34,11 @@ namespace SistemaSupermercados.Service
             }
         }
 
+        public List<Funcionario> RetornarLista()
+        {
+            return funcionarios;
+        }
+
         public bool Atualizar(int id, Funcionario funcionario)
         {
             Funcionario funcionarioLista = funcionarios.Find(p => p.Id == id);
