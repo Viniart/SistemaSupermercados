@@ -40,7 +40,7 @@ do
             EscolherMetodoProduto();
             break;
         case 4:
-            Console.WriteLine("Metodo ainda nao implementado");
+            EscolherMetodoTransacao();
             break;
         default:
             Console.WriteLine("Numero invalido");
@@ -393,14 +393,15 @@ Transacao CriarTransacao()
         // Verifico se tem alguém com o Id fornecido
         if (listaFuncionarios.Exists(c => c.Id == idFuncionario))
         {
-            idInvalido = false;
+            idFuncionarioInvalido = false;
         }
         else
         {
             Console.WriteLine("Id Inválido, nenhum Funcionário com esse Id foi encontrado");
         }
     }
-    while (idInvalido);
+    while (idFuncionarioInvalido);
+    transacao.IdFuncionario = idFuncionario;
 
     Console.WriteLine("Digite da Data da Transação: (DD/MM/YYYY)");
     bool dataInvalida = true;
@@ -437,6 +438,7 @@ Transacao CriarTransacao()
         }
 
         transacao.Produtos.Add(listaProdutos.Find(p => p.Id == idProduto));
+        transacao.ValorTotal += listaProdutos.Find(p => p.Id == idProduto).Preco;
 
         Console.WriteLine("Deseja adicionar mais produtos? (S/N)");
         string resposta = Console.ReadLine();

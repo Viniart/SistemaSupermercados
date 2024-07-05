@@ -19,7 +19,7 @@ namespace SistemaSupermercados.Utils
             Console.WriteLine($"Categoria: {prod.Categoria}");
             Console.WriteLine($"Preco: {prod.Preco}");
             Console.WriteLine($"Quantidade em Estoque: {prod.QuantidadeEstoque}");
-            Console.WriteLine($"Data de Validade: {prod.DataValidade}\n");
+            Console.WriteLine($"Data de Validade: {prod.DataValidade.Date}\n");
         }
 
         public static void ExibirCliente(Cliente cliente)
